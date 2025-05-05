@@ -5,8 +5,10 @@
 #include "include_tests.h"
 
 
-typedef void (*teste)(void);
+typedef void (*Test)(void);
 int main(){
-    printf("Hello");
+    Test tests[] = {ex1};
+    for(int i = 0; i < sizeof(tests) / sizeof(tests[0]); i++)
+        tests[i]();
     return 0;
 }
