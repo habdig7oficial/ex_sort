@@ -1,0 +1,19 @@
+struct Pacient *busca_priority(struct Pacient arr[], int len, int element){
+    struct BuscaBin ctrl = {
+        .min = 0,
+        .max = len
+    };
+    printf("%d\n", len);
+    while(ctrl.min <= ctrl.max){
+        ctrl.mid = (ctrl.max + ctrl.min) / 2;
+        printf("mid = %d, min = %d, max = %d ctrl = %d, element = %d\n", ctrl.mid,ctrl.min, ctrl.max, arr[ctrl.mid].priority, element);
+
+        if(arr[ctrl.mid].priority >= element){
+            ctrl.max = ctrl.mid - 1;
+        }
+        else if(arr[ctrl.mid].priority < element){
+            ctrl.min = ctrl.mid + 1;
+        }
+    }
+    return &arr[ctrl.mid];
+}

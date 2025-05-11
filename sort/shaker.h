@@ -1,7 +1,6 @@
 #include "stdbool.h"
 
 void shaker_sort(int arr[], int len){
-
     int start = 0;
     int end = len - 1;
     bool swaped = true;
