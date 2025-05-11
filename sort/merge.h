@@ -7,27 +7,27 @@ struct ArrArgs {
 };
 
 void merge(int v1[], int len_left, int v2[], int len_right, int new_arr[]) {
-    int i1 = 0;
-    int i2 = 0;
+    int i_left = 0;
+    int i_right = 0;
     int i = 0;
-    while (i1 < len_left && i2 < len_right) {
-        if (v1[i1] < v2[i2]) {
-        new_arr[i] = v1[i1];
-        i1++;
+    while (i_left < len_left && i_right < len_right) {
+        if (v1[i_left] < v2[i_right]) {
+            new_arr[i] = v1[i_left];
+            i_left++;
         } else {
-        new_arr[i] = v2[i2];
-        i2++;
+            new_arr[i] = v2[i_right];
+            i_right++;
         }
         i++;
     }
-    while (i1 < len_left) {
-        new_arr[i] = v1[i1];
-        i1++;
+    while (i_left < len_left) {
+        new_arr[i] = v1[i_left];
+        i_left++;
         i++;
     }
-    while (i2 < len_right) {
-        new_arr[i] = v2[i2];
-        i2++;
+    while (i_right < len_right) {
+        new_arr[i] = v2[i_right];
+        i_right++;
         i++;
     }
 }
@@ -76,4 +76,27 @@ void *merge_sort(void *ptr_args){
 
     return new_arr;
     
+}
+
+void merge_sort_iter(int arr[], int len) {
+  int* tmp = (int*)malloc(len * sizeof(int));
+
+  int width = 1;
+  while (width < len) {
+    for (int i = 0; i < len; i += (2 * width)) {
+      int len_left = width;
+      int len_right = (i + (2 * width) > len) ? len - i - width : width;
+
+      merge(&arr[i], len_left, &arr[i + len_left], len_right, &tmp[i]);
+
+    }
+
+    for (int i = 0; i < len; i++) {
+      arr[i] = tmp[i];
+    }
+
+    width *= 2;
+  }
+
+  free(tmp);
 }
