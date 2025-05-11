@@ -3,3 +3,4 @@
 #include "sort/selection.h"
 #include "sort/merge.h"
 #include "sort/quick.h"
+#include "sort/insertion.h"

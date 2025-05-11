@@ -3,3 +3,4 @@
 #include "selection/test_selection.h"
 #include "merge/test_merge.h"
 #include "quick/test_quick.h"
+#include "insertion/test_insertion.h"
