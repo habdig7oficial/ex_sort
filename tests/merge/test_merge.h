@@ -1,4 +1,6 @@
 void ex9(){
+
+    printf("\nJá Utiliza memoria otimizada, criando somente um novo vetor auxiliar pro merge \n");
     hr("MERGE", 15);
     int arr[] = {5, 2, 4, 10, 1, 2, 2,};
     int sorted[] = { 1, 2, 2, 2, 4, 5, 10};
