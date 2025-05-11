@@ -2,3 +2,4 @@
 #include "shaker/test_shaker.h"
 #include "selection/test_selection.h"
 #include "merge/test_merge.h"
+#include "quick/test_quick.h"
