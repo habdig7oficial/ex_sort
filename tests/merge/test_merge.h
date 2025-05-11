@@ -17,3 +17,23 @@ void ex9(){
        // assert(arr[i] == sorted[i]);
     }
 }
+
+void ex8(){
+    hr("MERGE TWO ARRAYS", 15);
+    int arr1[] = {10, 20, 30 ,40};
+    int arr2[] = {15, 25, 35 ,45, 55};
+
+    int merged[] = {10, 15, 20, 25, 30, 35, 40, 45, 55};
+
+    int len1 = sizeof(arr1) / sizeof(arr1[0]);
+    int len2 = sizeof(arr2) / sizeof(arr2[0]);
+
+
+    int *res = malloc(sizeof(arr1) + sizeof(arr2));
+
+    merge(arr1, len1, arr2, len2, res);
+    for(int i = 0; i < sizeof(merged) / sizeof(merged[0]); i++){
+        printf("%d - %d\n", res[i], merged[i]);
+        assert(res[i] == merged[i]);
+    }
+}
