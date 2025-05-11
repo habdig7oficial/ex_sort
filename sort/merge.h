@@ -72,6 +72,7 @@ void *merge_sort(void *ptr_args){
     }
     printf("\n");
 
+    free(new_arr);
 
     return new_arr;
     
