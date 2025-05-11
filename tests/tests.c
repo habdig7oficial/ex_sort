@@ -7,7 +7,7 @@
 
 typedef void (*Test)(void);
 int main(){
-    Test tests[] = {ex1, find_min, ex4, ex5, ex9};
+    Test tests[] = {ex1, ex2, find_min, ex4, ex5, ex9};
     for(int i = 0; i < sizeof(tests) / sizeof(tests[0]); i++)
         tests[i]();
     return 0;
