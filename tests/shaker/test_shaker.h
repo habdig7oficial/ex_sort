@@ -26,11 +26,14 @@ struct Pacient{
     int priority;
 };
 
-struct BuscaBin{
-    int min;
-    int mid;
-    int max;
-};
+#if !defined busca_bin 
+    #define busca_bin
+    struct BuscaBin{
+        int min;
+        int mid;
+        int max;
+    };
+#endif 
 
 struct Pacient *busca_priority(struct Pacient arr[], int len, int element){
     struct BuscaBin ctrl = {
